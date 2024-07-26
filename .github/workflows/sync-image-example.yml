@@ -17,10 +17,12 @@ jobs:
  
     # 在job中添加步骤来执行同步操作。在上述job中，添加步骤来执行skopeo命令，从docker.io仓库拉取镜像，并将其推送到阿里云个人仓库。
     steps:
-    - name: Setup Node
-      uses: actions/setup-node@v4
+    - name: Setup Node.js environment
+      uses: actions/setup-node@v4.0.3
       with:
-        node-version: '20.x'
+        # Version Spec of the version to use. Examples: 12.x, 10.15.1, >=10.15.0.
+        node-version: 20.x
+       
         
     - name: Git pull
       uses: actions/checkout@v3
